@@ -1,272 +1,85 @@
-<div align="center">
-  
-# 👋 Hey, I'm Sameer
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg">
+  <img src="assets/hero-light.svg" width="100%" alt="Sameer Amjad. Indoor positioning, real-time systems and the web, built in Islamabad. An animated floor plan shows a phone's position estimate settling at the entrance, then walking a route to its destination.">
+</picture>
 
-### Full-Stack Developer | Systems Programmer | Automation Architect
+I study computer science at FAST-NUCES in Islamabad. Most of my time goes into **TURN**, our final-year project: indoor navigation for malls and large buildings that works without installing beacons. My part is positioning, which means turning a phone's steps, heading and radio signals into a location you can trust. The map above is a small sketch of that.
 
-*Building scalable applications, crafting elegant algorithms, and automating the impossible*
+Alongside it I research how digital twins stay in sync over unreliable networks, and I build websites and apps for businesses here, from a furniture storefront to a neuroscience institute.
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=google-chrome&logoColor=white)](https://www.sameeramjad.xyz)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sameeramjd)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:sameeramjad202@gmail.com)
+### Right now
 
-</div>
+- Building TURN's positioning stack: step detection, heading and a particle filter that knows the floor plan.
+- Designing experiments on MQTT QoS and edge buffering for digital-twin sync.
+- Shipping NeuroZehn, a bilingual site for a brain-health institute.
+- Building a customer feedback platform for local businesses and planning a school information system. Both are private for now.
 
----
+### Selected work
 
-<img align="right" alt="Coding" width="400" src="https://user-images.githubusercontent.com/74038190/229223263-cf2e4b07-2615-4f87-9c38-e37600f8381a.gif">
+<a href="https://github.com/SMR202/turn-indoor-navigation"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/work-turn-dark.svg"><img src="assets/work-turn-light.svg" width="100%" alt="TURN: indoor navigation for malls without installing beacons. I own positioning: step detection, heading, and a particle filter that rules out paths through walls."></picture></a>
+<a href="https://github.com/ZakiNabeel/AI-System-for-Live-and-Recorded-Online-Video-Understanding-and-Summarization"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/work-lumen-dark.svg"><img src="assets/work-lumen-light.svg" width="100%" alt="Lumen: watches live streams or recorded videos, then transcribes, reads the frames, summarizes and answers questions about them through a ten-stage pipeline."></picture></a>
+<a href="https://github.com/SMR202/dt-mqtt-resilience"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/work-twin-dark.svg"><img src="assets/work-twin-light.svg" width="100%" alt="Digital twins on bad networks: research on how MQTT QoS levels and edge buffering change freshness, delivery and recovery time when a cloud digital twin loses its connection."></picture></a>
+<a href="https://github.com/SMR202/AirControlX"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/work-aircontrolx-dark.svg"><img src="assets/work-aircontrolx-light.svg" width="100%" alt="AirControlX: air traffic control simulation for three runways, run on POSIX threads with Unix pipes and drawn in SFML."></picture></a>
+<a href="https://github.com/SMR202/Neurosphere-Global"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/work-neurozehn-dark.svg"><img src="assets/work-neurozehn-light.svg" width="100%" alt="NeuroZehn: a 61-page site for a brain-health institute, with Urdu right-to-left interface previews and accessible figures."></picture></a>
+<a href="https://github.com/SMR202/IntegrityVerificationSystem"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/work-merkle-dark.svg"><img src="assets/work-merkle-light.svg" width="100%" alt="Integrity verification: SHA-256 Merkle trees over a million product reviews, with tamper detection and existence proofs checked in under 100 ms."></picture></a>
+<a href="https://www.sameeramjad.xyz"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/work-clients-dark.svg"><img src="assets/work-clients-light.svg" width="100%" alt="Sites for Islamabad businesses: twenty-plus sites and pitch builds for cafés, salons, bakeries, a furniture maker, a school and a collector-car marketplace."></picture></a>
 
-### 🚀 About Me
+<details>
+<summary><b>Sixteen more projects, from compilers to games</b></summary>
 
-```typescript
-const sameer = {
-    location: "Pakistan 🇵🇰",
-    education: "Computer Science Student",
-    currentFocus: ["Mobile Development", "System Design", "AI Automation"],
-    interests: ["Clean Code", "Performance Optimization", "Game Dev"],
-    funFact: "I automate everything, even my coffee breaks ☕"
-};
-```
-
-- 🔭 Currently building **real-time transportation solutions**
-- 🌱 Learning **advanced concurrency** and **distributed systems**
-- 💡 Passionate about **clean architecture** and **elegant algorithms**
-- 🎮 Game development enthusiast (built PvZ & Centipede clones!)
-- 🤖 Automation geek (Reddit→YouTube pipeline runs while I sleep)
-
----
-
-### 💻 Tech Arsenal
-
-<details open>
-<summary><b>⚡ Languages</b></summary>
 <br>
 
-![C++](https://img.shields.io/badge/C++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white)
-![Kotlin](https://img.shields.io/badge/Kotlin-%237F52FF.svg?style=for-the-badge&logo=kotlin&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
-![C#](https://img.shields.io/badge/C%23-%23239120.svg?style=for-the-badge&logo=csharp&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
-![SQL](https://img.shields.io/badge/SQL-%2307405e.svg?style=for-the-badge&logo=postgresql&logoColor=white)
+**Apps and platforms**
+
+- **Busin.** React Native bus tracking with live GPS over WebSockets and an ETA for every stop. *Private repo.*
+- **Skill-Link.** Kotlin marketplace for local services, with bids, chat with media and push notifications. *Private repo.*
+- [**SkillLink, rebuilt**](https://github.com/SMR202/SkillLink-Java-Expo). The same marketplace on Spring Boot with JWT roles and an Expo client. Team project.
+- [**SkillLink API**](https://github.com/SMR202/SkillLinkWebAPI). Express, Sequelize and MySQL behind the Kotlin app, with Cloudinary uploads and Firebase messaging.
+- [**Centaurus Experience**](https://github.com/SMR202/centaurus-experience). Expo prototype of a visitor app for The Centaurus Mall: directory, indoor directions, rewards and finding your car.
+- [**Lakkar Home**](https://github.com/SMR202/Lakkar-Website). Furniture storefront with cash-on-delivery checkout, run entirely from the owner's Google Sheet.
+
+**AI and automation**
+
+- [**RACE reading comprehension**](https://github.com/SMR202/RACE-Reading-Comprehension-AI). Classical ML that checks answers and generates distractors and hints for reading quizzes.
+- [**AI Resume Tailor**](https://github.com/SMR202/AiResumeTailor). Rewrites a resume for a specific job description through an n8n workflow and hands back a PDF.
+- **Reddit to YouTube pipeline.** An n8n workflow that picks stories, rewrites them with Gemini, voices them with Azure TTS, renders with Remotion and uploads on a schedule.
+
+**Compilers, systems and data structures**
+
+- [**LL(1) parser**](https://github.com/SMR202/LL-1-Parser). FIRST and FOLLOW sets, left-recursion removal, left factoring and parse trees in C++17.
+- [**Git-Lite**](https://github.com/FatimaSohailll/Git-Lite). Version control on AVL, red-black and B-trees with Merkle-tree change tracking. Team project.
+- [**Terminal NotePad**](https://github.com/SMR202/Terminal-NotePad). A command-line text editor in C++ with word suggestions and search.
+
+**Desktop**
+
+- [**SafeNest**](https://github.com/SMR202/SafeNest). JavaFX home-security dashboard for cameras, sensors and PIN-protected alarm modes.
+- [**TravelEase**](https://github.com/SMR202/TravelEase). Travel booking in C# Windows Forms on SQL Server, with reports and triggers.
+
+**Games**
+
+- [**Plants vs. Zombies, in C++**](https://github.com/SMR202/PlantsVsZombies). Tower defence with factories for six plants and five zombies, built on SFML.
+- [**Centipede, in C++**](https://github.com/SMR202/ATARI-Centipede). The arcade game rebuilt in SFML, one of my first C++ projects.
 
 </details>
 
-<details open>
-<summary><b>📱 Mobile & Frontend</b></summary>
-<br>
+### Tools I use
 
-![React Native](https://img.shields.io/badge/React_Native-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
-![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)
-![Expo](https://img.shields.io/badge/Expo-1B1F23?style=for-the-badge&logo=expo&logoColor=white)
-![Windows Forms](https://img.shields.io/badge/Windows%20Forms-0078D6?style=for-the-badge&logo=windows&logoColor=white)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/tools-dark.svg">
+  <img src="assets/tools-light.svg" width="100%" alt="Tools I use. Languages: TypeScript, C++, Python, Kotlin, Java, C# and .NET. Web: Next.js, React, Tailwind CSS, Node.js, Express, Sanity. Apps and APIs: Expo, Android, Spring Boot, FastAPI, Firebase. Data: PostgreSQL, Supabase, MySQL, MongoDB, Google Sheets. ML and media: scikit-learn, Gemini, FFmpeg, Streamlit. Systems: Linux, Git, Docker, MQTT, n8n, SFML.">
+</picture>
 
-</details>
+### Activity
 
-<details open>
-<summary><b>⚙️ Backend & Database</b></summary>
-<br>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/activity-dark.svg">
+  <img src="assets/activity-light.svg" width="100%" alt="My GitHub contributions over the last year, refreshed daily.">
+</picture>
 
-![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
-![Express.js](https://img.shields.io/badge/Express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
-![SQL Server](https://img.shields.io/badge/SQL%20Server-CC2927?style=for-the-badge&logo=microsoft%20sql%20server&logoColor=white)
-![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)
-![Firebase](https://img.shields.io/badge/Firebase-039BE5?style=for-the-badge&logo=Firebase&logoColor=white)
+### Get in touch
 
-</details>
+<a href="https://www.sameeramjad.xyz"><img src="assets/contact-portfolio.svg" width="32%" alt="Portfolio: sameeramjad.xyz"></a>
+<a href="https://www.linkedin.com/in/sameeramjd"><img src="assets/contact-linkedin.svg" width="32%" alt="LinkedIn: in/sameeramjd"></a>
+<a href="mailto:sameeramjad202@gmail.com"><img src="assets/contact-email.svg" width="32%" alt="Email: sameeramjad202@gmail.com"></a>
 
-<details open>
-<summary><b>🛠️ Systems & Tools</b></summary>
-<br>
-
-![POSIX Threads](https://img.shields.io/badge/pthreads-FCC624?style=for-the-badge&logo=linux&logoColor=black)
-![SFML](https://img.shields.io/badge/SFML-8CC445?style=for-the-badge&logo=sfml&logoColor=white)
-![n8n](https://img.shields.io/badge/n8n-EA4B71?style=for-the-badge&logo=n8n&logoColor=white)
-![Git](https://img.shields.io/badge/Git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
-![REST API](https://img.shields.io/badge/REST-02569B?style=for-the-badge&logo=rest&logoColor=white)
-
-</details>
-
----
-
-### 🎯 Featured Projects
-
-<table>
-<tr>
-<td width="50%">
-
-#### 🚌 [Busin - Real-Time Bus Tracking](https://github.com/SMR202/Busin)
-**React Native • Node.js • PostgreSQL**
-
-Real-time bus tracking app with live GPS, ETA calculations, and route optimization. Handles concurrent updates with proper database design.
-
-🔹 Live location tracking  
-🔹 Multi-role system (drivers/passengers)  
-🔹 Route visualization & ETA
-
-</td>
-<td width="50%">
-
-#### 🌐 [Skill-Link - Service Marketplace](https://github.com/SMR202/Skill-Link)
-**Kotlin • Node.js • MySQL**
-
-Two-sided marketplace connecting service seekers with providers. Full bidding system with real-time messaging.
-
-🔹 Provider response system  
-🔹 Firebase push notifications  
-🔹 Real-time chat with media
-
-</td>
-</tr>
-
-<tr>
-<td width="50%">
-
-#### ✈️ [AirControlX - ATC Simulation](https://github.com/SMR202/AirControlX)
-**C++ • POSIX Threads • Unix IPC**
-
-Multi-threaded air traffic control with 4 concurrent threads, mutex synchronization, and inter-process communication via pipes.
-
-🔹 Priority-based scheduling  
-🔹 Thread-safe resource allocation  
-🔹 Real-time collision detection
-
-</td>
-<td width="50%">
-
-#### 🌳 [Git-Lite - Version Control](https://github.com/FatimaSohailll/Git-Lite)
-**C++ • Data Structures • Hashing**
-
-Git reimplementation using AVL/Red-Black/B-Trees with Merkle Tree change tracking and SHA-256 integrity.
-
-🔹 Multiple tree implementations  
-🔹 Branching & merging  
-🔹 Cryptographic hashing
-
-</td>
-</tr>
-
-<tr>
-<td width="50%">
-
-#### 🤖 [Reddit→YouTube Automation](your-link)
-**n8n • AI • Azure TTS • Remotion**
-
-Fully automated content pipeline: scrapes Reddit → AI enhancement → voiceover generation → video rendering → YouTube upload.
-
-🔹 Zero manual intervention  
-🔹 8+ API integrations  
-🔹 Natural SSML voiceovers
-
-</td>
-<td width="50%">
-
-#### 🎮 [Plants vs Zombies Clone](https://github.com/SMR202/PlantsVsZombies)
-**C++ • SFML • OOP**
-
-Full tower defense game with factory patterns, polymorphic entities, and collision detection.
-
-🔹 6+ plant & zombie types  
-🔹 Wave-based spawning  
-🔹 Grid-based collision system
-
-</td>
-</tr>
-</table>
-
-<div align="center">
-  
-### 📊 GitHub Stats
-
-<img height="180em" src="https://github-readme-stats.vercel.app/api?username=SMR202&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true"/>
-<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=SMR202&layout=compact&langs_count=8&theme=tokyonight"/>
-
-</div>
-
----
-
-### 🏆 Highlights
-
-```diff
-+ 🎓 Strong fundamentals in Data Structures, Algorithms & System Design
-+ 🚀 Full-stack developer with mobile, backend, and systems programming experience
-+ 🧵 Proficient in concurrency, multi-threading, and IPC
-+ 🤖 Automation architect with AI/ML integration skills
-+ 🎮 Game development with C++ and SFML
-+ 📱 Published mobile apps with real-time features
-+ 🗄️ Complex database design with 20+ table schemas
-```
-
----
-
-### 🔥 Streak Stats
-
-<div align="center">
-  
-[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=SMR202&theme=tokyonight)](https://git.io/streak-stats)
-
-</div>
-
----
-
-### 🎨 What I'm Working On
-
-- 🚌 **Busin Bus System** - Polishing real-time tracking features
-- 🤖 **AI Content Pipeline** - Scaling Reddit automation workflow
-- 📚 **Learning** - Distributed systems & cloud architecture
-- 🎯 **Next Up** - Open-source contributions & portfolio website
-
----
-
-### 💡 Fun Facts
-
-<img align="right" alt="Code GIF" width="350" src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif">
-
-- 🧠 Solved **complex concurrency problems** with pthreads & mutexes
-- 🎮 Built **3 complete games** from scratch (PvZ, Centipede, Pong)
-- 🤖 Automated my **entire content creation workflow**
-- 🌲 Implemented **Merkle Trees** for version control
-- 📱 Created apps handling **real-time GPS** for multiple users
-- 💾 Designed databases with **proper normalization** and **foreign keys**
-- 🚀 Love **clean code** and **elegant algorithms**
-
----
-
-### 📫 Let's Connect!
-
-<div align="center">
-
-I'm always open to interesting conversations and collaboration opportunities!
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sameeramjd)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:sameeramjad202@gmail.com)
-[![Portfolio](https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=google-chrome&logoColor=white)](https://www.sameeramjad.xyz)
-
-</div>
-
----
-
-<div align="center">
-
-### 💭 Dev Quote
-
-![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight)
-
-### 🐍 Contribution Graph
-
-![snake gif](https://github.com/SMR202/SMR202/blob/output/github-contribution-grid-snake-dark.svg)
-
----
-
-<img src="https://komarev.com/ghpvc/?username=SMR202&label=Profile%20views&color=0e75b6&style=flat" alt="profile views" />
-
-**Thanks for stopping by!** 🚀
-
-*"Code is like humor. When you have to explain it, it's bad." – Cory House*
-
-</div>
-```
-
----
+<sub>Every image on this page is drawn by the scripts in <a href="scripts">scripts/</a>. The activity panel is redrawn each night by a GitHub Action.</sub>
