@@ -86,27 +86,27 @@ def render(cal: dict, mode: str, updated: dt.date) -> str:
     gx, gy = 96, 134
     days = [d for w in cal["weeks"] for d in w["contributionDays"]]
 
-    o = [f'<rect x="1" y="1" width="{W - 2}" height="{H - 2}" rx="22" fill="{c["room"]}" '
+    o = [f'<rect x="1" y="1" width="{W - 2}" height="{H - 2}" rx="24" fill="{c["card"]}" '
          f'stroke="{c["line"]}" stroke-width="2"/>']
 
     total = cal["totalContributions"]
     if total is None:
-        o.append(text("Contribution activity", 40, 72, 34, 800, c["ink"], tracking=-0.01))
-        o.append(text("Waiting for the first daily refresh", W - 40, 70, 20, 600, c["muted"], "end"))
+        o.append(text("Contribution activity", 40, 72, 30, "x700", c["ink"], tracking=-0.01))
+        o.append(text("Waiting for the first daily refresh", W - 40, 70, 20, "t500", c["muted"], "end"))
     else:
-        o.append(text(f"{plural(total, 'contribution')} in the last year", 40, 72, 34, 800, c["ink"],
+        o.append(text(f"{plural(total, 'contribution')} in the last year", 40, 72, 30, "x700", c["ink"],
                       tracking=-0.01))
         current, longest = streaks(days)
         x = W - 40
         for label, value in (("Longest streak", plural(longest, "day")), ("Current streak", plural(current, "day"))):
-            o.append(text(value, x, 70, 20, 800, c["ink"], "end"))
-            x -= measure(value, 20, 800) + 10
-            o.append(text(label, x, 70, 20, 600, c["muted"], "end"))
-            x -= measure(label, 20, 600) + 36
+            o.append(text(value, x, 70, 20, "t700", c["ink"], "end"))
+            x -= measure(value, 20, "t700") + 10
+            o.append(text(label, x, 70, 20, "t500", c["muted"], "end"))
+            x -= measure(label, 20, "t500") + 36
 
     # weekday labels
     for row, name in ((1, "Mon"), (3, "Wed"), (5, "Fri")):
-        o.append(text(name, 40, gy + row * step + 12, 14, 600, c["muted"]))
+        o.append(text(name, 40, gy + row * step + 13, 16, "t500", c["muted"]))
 
     last_month, last_x = None, -99
     css = []
@@ -115,7 +115,7 @@ def render(cal: dict, mode: str, updated: dt.date) -> str:
         first = dt.date.fromisoformat(week["contributionDays"][0]["date"])
         if first.month != last_month:
             if col and x - last_x > 3 * step and col < len(cal["weeks"]) - 1:
-                o.append(text(first.strftime("%b"), x, gy - 14, 14, 600, c["muted"]))
+                o.append(text(first.strftime("%b"), x, gy - 14, 16, "t500", c["muted"]))
                 last_x = x
             last_month = first.month
         for d in week["contributionDays"]:
@@ -124,31 +124,31 @@ def render(cal: dict, mode: str, updated: dt.date) -> str:
             o.append(f'<rect x="{x:.1f}" y="{gy + row * step:.1f}" width="{cell}" height="{cell}" rx="3.5" '
                      f'fill="{c["heat"][lvl]}"><title>{d["date"]}: {d["contributionCount"]}</title></rect>')
 
-    # today, marked like the destination on the floor plan
+    # today, outlined in tangerine
     last = days[-1]
     col = len(cal["weeks"]) - 1
     row = (dt.date.fromisoformat(last["date"]).weekday() + 1) % 7
     tx, ty = gx + col * step, gy + row * step
     o.append(f'<rect class="today" x="{tx - 3:.1f}" y="{ty - 3:.1f}" width="{cell + 6}" height="{cell + 6}" '
-             f'rx="5.5" fill="none" stroke="{c["mark"]}" stroke-width="2.5"/>')
+             f'rx="5.5" fill="none" stroke="{c["tangerine"]}" stroke-width="2.5"/>')
     css.append(".today{animation:today 2.4s ease-in-out infinite}"
                "@keyframes today{0%,100%{opacity:1}50%{opacity:.25}}"
                "@media (prefers-reduced-motion: reduce){.today{animation:none}}")
 
     # legend and freshness
     fy = H - 34
-    o.append(text("Less", 96, fy, 15, 600, c["muted"]))
-    lx = 96 + measure("Less", 15, 600) + 12
+    o.append(text("Less", 96, fy, 17, "t500", c["muted"]))
+    lx = 96 + measure("Less", 17, "t500") + 12
     for lvl in range(5):
         o.append(f'<rect x="{lx:.1f}" y="{fy - 13}" width="15" height="15" rx="3.5" fill="{c["heat"][lvl]}"/>')
         lx += 20
-    o.append(text("More", lx + 6, fy, 15, 600, c["muted"]))
-    o.append(text("Today", lx + 70 + 20, fy, 15, 600, c["muted"]))
+    o.append(text("More", lx + 6, fy, 17, "t500", c["muted"]))
+    o.append(text("Today", lx + 70 + 24, fy, 17, "t500", c["muted"]))
     o.append(f'<rect x="{lx + 64:.1f}" y="{fy - 14}" width="17" height="17" rx="4.5" fill="none" '
-             f'stroke="{c["mark"]}" stroke-width="2.5"/>')
+             f'stroke="{c["tangerine"]}" stroke-width="2.5"/>')
     note = ("Refreshed daily by a GitHub Action" if total is None
             else f"Refreshed daily by a GitHub Action, last on {updated.day} {updated:%b %Y}")
-    o.append(text(note, W - 40, fy, 15, 600, c["muted"], "end"))
+    o.append(text(note, W - 40, fy, 17, "t500", c["muted"], "end"))
 
     summary = ("Contribution activity, waiting for the first refresh" if total is None
                else f"{plural(total, 'contribution')} in the last year")

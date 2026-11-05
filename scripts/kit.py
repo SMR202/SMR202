@@ -1,8 +1,9 @@
 """Shared helpers for the profile artwork.
 
 Every SVG in assets/ is generated from these helpers. Text is converted to
-vector paths with HarfBuzz shaping, so the images look identical everywhere:
-GitHub renders README images in a sandbox that cannot load web fonts.
+vector paths with HarfBuzz shaping (Archivo, SIL OFL), so the images look the
+same everywhere: GitHub shows README images in a sandbox that cannot load web
+fonts.
 """
 
 from __future__ import annotations
@@ -23,42 +24,38 @@ FONTS = Path(__file__).resolve().parent / "fonts"
 ICONS = json.loads((Path(__file__).resolve().parent / "icons.json").read_text())
 
 
-# Night and day versions of an indoor map. The navy ground and wayfinding
-# yellow come from mall and airport signage; the blue is the position dot.
+# Inks for the generative art. Warm and saturated, chosen to hold up on both
+# GitHub's white page and its dark canvas. Card neutrals match GitHub's own UI.
+INKS = {
+    "tangerine": "#FF5A1F",
+    "marigold": "#FFB200",
+    "rose": "#FF7AA8",
+    "jade": "#14A874",
+    "lilac": "#A98BFF",
+}
+
 PALETTES = {
     "dark": {
-        "bg": "#0D1B2E",
-        "room": "#13253D",
-        "room2": "#182D4A",
-        "wall": "#2E4A70",
-        "line": "#22385A",
-        "ink": "#E9EEF6",
-        "muted": "#93A3BB",
-        "blue": "#4DA3FF",
-        "halo": "#4DA3FF",
-        "sign": "#FFC530",
-        "sign_ink": "#0D1B2E",
-        "step": "#C9D6E8",
-        "dest_fill": (0, 0.07),
-        "mark": "#FFC530",
-        "heat": ["#182D4A", "#1D4677", "#2A69B4", "#4DA3FF", "#B5DAFF"],
+        "page": "#0D1117",
+        "card": "#161B22",
+        "line": "#30363D",
+        "ink": "#F0F3F6",
+        "muted": "#9198A1",
+        "faint": "#3D444D",
+        "spark": "#FFFFFF",
+        "heat": ["#21262D", "#5A2A12", "#9C3F12", "#E8621E", "#FFB15C"],
+        **INKS,
     },
     "light": {
-        "bg": "#EEF2F7",
-        "room": "#FFFFFF",
-        "room2": "#E3E9F1",
-        "wall": "#A3B3C8",
-        "line": "#CBD5E2",
-        "ink": "#0D1B2E",
-        "muted": "#53647C",
-        "blue": "#1A6FE0",
-        "halo": "#1A6FE0",
-        "sign": "#FFC530",
-        "sign_ink": "#0D1B2E",
-        "step": "#3B4E69",
-        "dest_fill": (0.12, 0.28),
-        "mark": "#D99A00",
-        "heat": ["#E3E9F1", "#B7D1F4", "#6EA5EC", "#1A6FE0", "#0B3F8C"],
+        "page": "#FFFFFF",
+        "card": "#F6F8FA",
+        "line": "#D1D9E0",
+        "ink": "#1F2328",
+        "muted": "#59636E",
+        "faint": "#D1D9E0",
+        "spark": "#FFFFFF",
+        "heat": ["#EBEDF0", "#FFD2B0", "#FF9E5E", "#F2631F", "#B53A0A"],
+        **INKS,
     },
 }
 
@@ -74,8 +71,8 @@ def num(v: float) -> str:
 
 
 class Face:
-    def __init__(self, weight: int):
-        tt = TTFont(FONTS / f"overpass-{weight}.woff")
+    def __init__(self, key: str):
+        tt = TTFont(FONTS / f"archivo-{key}.woff")
         tt.flavor = None
         buf = io.BytesIO()
         tt.save(buf)
@@ -139,8 +136,9 @@ class Face:
 
 
 @lru_cache(maxsize=None)
-def face(weight: int) -> Face:
-    return Face(weight)
+def face(key: str) -> Face:
+    """Archivo instances: x800/x700 are Expanded display cuts, t400-t700 text cuts."""
+    return Face(key)
 
 
 # Glyphs used by the document being built. Each one is stored once in <defs>
@@ -148,14 +146,14 @@ def face(weight: int) -> Face:
 _GLYPHS: dict[str, str] = {}
 
 
-def text(content: str, x: float, y: float, size: float, weight: int = 500, fill: str = "#000",
+def text(content: str, x: float, y: float, size: float, font: str = "t500", fill: str = "#000",
          anchor: str = "start", tracking: float = 0, extra: str = "", features=None) -> str:
-    f = face(weight)
+    f = face(font)
     runs, _ = f.glyph_runs(content, x, y, size, tracking, anchor, features)
     s = size / f.upem
     uses = []
     for name, gx, gy in runs:
-        gid = f"g{weight}{name}".replace(".", "_")
+        gid = f"g{font}{name}".replace(".", "_")
         if gid not in _GLYPHS:
             d = f.outline(name)
             _GLYPHS[gid] = d
@@ -164,12 +162,12 @@ def text(content: str, x: float, y: float, size: float, weight: int = 500, fill:
     return f'<g fill="{fill}"{extra}>{"".join(uses)}</g>'
 
 
-def measure(content: str, size: float, weight: int = 500, tracking: float = 0) -> float:
-    return face(weight).measure(content, size, tracking)
+def measure(content: str, size: float, font: str = "t500", tracking: float = 0) -> float:
+    return face(font).measure(content, size, tracking)
 
 
-def wrap(content: str, size: float, max_width: float, weight: int = 500) -> list[str]:
-    return face(weight).wrap(content, size, max_width)
+def wrap(content: str, size: float, max_width: float, font: str = "t500") -> list[str]:
+    return face(font).wrap(content, size, max_width)
 
 
 def icon(name: str, x: float, y: float, size: float, fill: str) -> str:
